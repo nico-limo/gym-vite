@@ -1,12 +1,8 @@
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { LINKS_TYPE } from "@/utils/enums";
+import { ActionButtonInterface } from "@/utils/types";
 
-type Props = {
-  children: React.ReactNode;
-  setSelectedPage: (value: LINKS_TYPE) => void;
-};
-
-const ActionButton = ({ children, setSelectedPage }: Props) => {
+const ActionButton = ({ children, setSelectedPage }: ActionButtonInterface) => {
   return (
     <AnchorLink
       className="rounded-md bg-secondary-500 px-10 py-2 hover:bg-primary-500 hover:text-white"

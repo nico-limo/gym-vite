@@ -1,9 +1,6 @@
-import { LINKS, LINKS_TYPE } from "@/utils/enums";
-import Link from "./Link";
-import { FLEXBETWEEN } from "@/utils/tailwindStyles";
-import ActionButton from "@/components/ActionButton";
+import { LINKS_TYPE } from "@/utils/enums";
+import { MobileRightSelected } from "@/utils/types";
 import { Bars3Icon } from "@heroicons/react/24/solid";
-import { useState } from "react";
 
 type Props = {
   selectedPage: LINKS_TYPE;
@@ -11,7 +8,7 @@ type Props = {
   toggleMenu: () => void;
 };
 
-const MobileRight = ({ selectedPage, setSelectedPage, toggleMenu }: Props) => {
+const MobileRight = ({ toggleMenu }: MobileRightSelected) => {
   return (
     <button className="rounded-full bg-secondary-500 p-2" onClick={toggleMenu}>
       <Bars3Icon className="h-6 w-6 text-white" />

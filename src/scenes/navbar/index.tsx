@@ -7,14 +7,13 @@ import DesktopRight from "./DesktopRight";
 import { FLEXBETWEEN } from "@/utils/tailwindStyles";
 import { useState } from "react";
 import ListLink from "@/components/ListLink";
+import { NavbarSelected } from "@/utils/types";
 
-type Props = {
-  selectedPage: LINKS_TYPE;
-  setSelectedPage: (value: LINKS_TYPE) => void;
-  isTopOfPage: boolean;
-};
-
-const Navbar = ({ selectedPage, setSelectedPage, isTopOfPage }: Props) => {
+const Navbar = ({
+  selectedPage,
+  setSelectedPage,
+  isTopOfPage,
+}: NavbarSelected) => {
   const isAboveMediumScreens = useMediaQuery(MEDIA_QUERYS.desktop);
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
   const navbarBackground = isTopOfPage ? "" : "bg-primary-100 drop-shadow";
@@ -40,11 +39,7 @@ const Navbar = ({ selectedPage, setSelectedPage, isTopOfPage }: Props) => {
                 selectedPage={selectedPage}
               />
             ) : (
-              <MobileRight
-                setSelectedPage={setSelectedPage}
-                selectedPage={selectedPage}
-                toggleMenu={toggleMenu}
-              />
+              <MobileRight toggleMenu={toggleMenu} />
             )}
           </div>
         </div>

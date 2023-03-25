@@ -2,13 +2,12 @@ import { LINKS_TYPE } from "@/utils/enums";
 import { FLEXBETWEEN } from "@/utils/tailwindStyles";
 import ActionButton from "@/components/ActionButton";
 import ListLink from "@/components/ListLink";
+import { SelectedPageInterface } from "@/utils/types";
 
-type Props = {
-  selectedPage: LINKS_TYPE;
-  setSelectedPage: (value: LINKS_TYPE) => void;
-};
-
-const DesktopRight = ({ selectedPage, setSelectedPage }: Props) => {
+const DesktopRight = ({
+  selectedPage,
+  setSelectedPage,
+}: SelectedPageInterface) => {
   return (
     <div className={`${FLEXBETWEEN} w-full`}>
       <ListLink selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
